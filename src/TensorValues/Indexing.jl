@@ -1,4 +1,9 @@
 
+
+# @fverdugo use LinearIndices and CartesianIndices
+# @fverdugo iteration and getindex idem user behaviour for symmetric and non-simmetric cases
+
+
 getindex(arg::MultiValue, i::Integer) = arg.data[i]
 
 function getindex(arg::TensorValue{D1,D2},i::Integer,j::Integer) where {D1,D2} 
@@ -31,6 +36,7 @@ getindex(arg::SymFourthOrderTensorValue{D},ci::CartesianIndex{4}) where {D} = ge
 
 eachindex(arg::MultiValue) = eachindex(arg.data)
 
+# @fverdugo use size instad get_array
 CartesianIndices(arg::MultiValue) = CartesianIndices(get_array(arg))
 
 LinearIndices(arg::MultiValue) = LinearIndices(get_array(arg))

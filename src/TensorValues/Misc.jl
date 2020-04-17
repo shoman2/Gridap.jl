@@ -14,6 +14,7 @@ n_components(::Number) = n_components(Number)
 
 # Misc operations on the type itself
 
+#@fverdugo eliminar si no hace falta
 @pure _s(s::Size{T}) where T = T
 
 # Custom type printing
